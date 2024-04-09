@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/sheet";
 import Image from "next/image";
 import { Separator } from "../ui/separator";
-import NavItems from "./Navitems"; // Ensure correct import
+import NavItems from "./Navitems";
 
 const MobileNav = () => {
   return (

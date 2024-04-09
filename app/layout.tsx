@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
+//new
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],

@@ -15,6 +15,7 @@ export default authMiddleware({
   ],
 });
 
+//new
 export const config = {
   matcher: [
     "/((?!.+\\.[\\w]+$|_next).*)",

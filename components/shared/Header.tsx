@@ -5,6 +5,7 @@ import { Button } from "../ui/button";
 import NavItems from "./Navitems";
 import MobileNav from "./MobileNav";
 
+//new
 const Header = () => {
   return (
     <header className="w-full border-b">
