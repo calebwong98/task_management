@@ -13,8 +13,6 @@ export const headerLinks = [
   },
 ];
 
-//new
-
 export const eventDefaultValues = {
   title: "",
   description: "",
@@ -27,3 +25,4 @@ export const eventDefaultValues = {
   isFree: false,
   url: "",
 };
+//hi

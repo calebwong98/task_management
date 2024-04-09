@@ -6,5 +6,4 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-//new
 export default Layout;

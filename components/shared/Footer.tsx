@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-//new
+//hi
 const Footer = () => {
   return (
     <footer className="border-t">
@@ -13,7 +13,7 @@ const Footer = () => {
           Task Management
         </Link>
 
-        <p>2023 Evently. All Rights reserved.</p>
+        <p>2024 Evently. All Rights reserved.</p>
       </div>
     </footer>
   );

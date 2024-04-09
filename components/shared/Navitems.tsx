@@ -1,6 +1,6 @@
 "use client";
 
-//new
+//hi
 import React from "react";
 import { headerLinks } from "@/constants";
 import { usePathname } from "next/navigation";
