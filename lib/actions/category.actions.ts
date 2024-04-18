@@ -1,9 +1,9 @@
 "use server";
 
-import { connectToDatabase } from "@/lib/database";
-import Category from "@/lib/database/models/category.model";
-import { handleError } from "@/lib/utils";
 import { CreateCategoryParams } from "@/types";
+import { handleError } from "../utils";
+import { connectToDatabase } from "../database";
+import Category from "../database/models/category.model";
 
 export const createCategory = async ({
   categoryName,
@@ -15,7 +15,7 @@ export const createCategory = async ({
 
     return JSON.parse(JSON.stringify(newCategory));
   } catch (error) {
-    // handleError(error);
+    handleError(error);
   }
 };
 
