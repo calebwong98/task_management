@@ -18,7 +18,6 @@ import { eventFormSchema } from "@/lib/validator";
 import { z } from "zod";
 import { eventDefaultValues } from "@/constants";
 import Dropdown from "./Dropdown";
-
 import { useUploadThing } from "@/lib/uploadthing";
 import { useState } from "react";
 import { FileUploader } from "./FileUploader";
@@ -31,22 +30,17 @@ type EventFormProps = {
 };
 
 const EventForm = ({ userId, type }: EventFormProps) => {
-<<<<<<< HEAD
   const [files, setFiles] = useState<File[]>([]);
   const initialValues = eventDefaultValues;
   const router = useRouter();
 
   const { startUpload } = useUploadThing("imageUploader");
-=======
-  const initialValues = eventDefaultValues;
->>>>>>> d4e92264c4a4d13a6208e5f3b5a8d4fce6c477f3
 
   const form = useForm<z.infer<typeof eventFormSchema>>({
     resolver: zodResolver(eventFormSchema),
     defaultValues: initialValues,
   });
 
-<<<<<<< HEAD
   async function onSubmit(values: z.infer<typeof eventFormSchema>) {
     let uploadedImageUrl = values.imageUrl;
 
@@ -75,13 +69,6 @@ const EventForm = ({ userId, type }: EventFormProps) => {
         console.log(error);
       }
     }
-=======
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof eventFormSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
->>>>>>> d4e92264c4a4d13a6208e5f3b5a8d4fce6c477f3
   }
 
   return (
@@ -142,7 +129,6 @@ const EventForm = ({ userId, type }: EventFormProps) => {
               </FormItem>
             )}
           />
-<<<<<<< HEAD
           <FormField
             control={form.control}
             name="imageUrl"
@@ -169,11 +155,6 @@ const EventForm = ({ userId, type }: EventFormProps) => {
         >
           {form.formState.isSubmitting ? "Submitting..." : `${type} Event `}
         </Button>
-=======
-        </div>
-
-        <Button type="submit">Create Event</Button>
->>>>>>> d4e92264c4a4d13a6208e5f3b5a8d4fce6c477f3
       </form>
     </Form>
   );
