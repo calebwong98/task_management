@@ -25,4 +25,3 @@ export const eventDefaultValues = {
   isFree: false,
   url: "",
 };
-//hi
