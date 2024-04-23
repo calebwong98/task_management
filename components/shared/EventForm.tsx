@@ -152,5 +152,3 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
 };
 
 export default EventForm;
-
-//new
