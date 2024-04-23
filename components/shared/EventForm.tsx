@@ -21,22 +21,24 @@ import { useState } from "react";
 import { FileUploader } from "./FileUploader";
 import { useRouter } from "next/router"; // Use next/router instead of next/navigation
 import { createEvent } from "@/lib/actions/event.action";
+import { IEvent } from "@/lib/database/models/event.model";
 
 type EventFormProps = {
   userId: string;
   type: "Create" | "Update";
+  event?: IEvent;
+  eventId?: string;
 };
 
-const EventForm = ({ userId, type }: EventFormProps) => {
+const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
   const [files, setFiles] = useState<File[]>([]);
-  const initialValues = eventDefaultValues;
+
   const router = useRouter();
 
   const { startUpload } = useUploadThing("imageUploader");
 
   const form = useForm<z.infer<typeof eventFormSchema>>({
     resolver: zodResolver(eventFormSchema),
-    defaultValues: initialValues,
   });
 
   const onSubmit = async (values: z.infer<typeof eventFormSchema>) => {
