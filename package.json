@@ -22,7 +22,7 @@
     "clsx": "^2.1.0",
     "lucide-react": "^0.364.0",
     "mongodb": "^6.5.0",
-    "mongoose": "^8.3.1",
+    "mongoose": "^8.3.2",
     "next": "14.1.4",
     "next-auth": "^4.24.7",
     "qs": "^6.12.0",

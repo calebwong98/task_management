@@ -30,5 +30,3 @@ export const getAllCategories = async () => {
     handleError(error);
   }
 };
-
-//new

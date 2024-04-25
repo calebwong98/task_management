@@ -13,6 +13,7 @@ const CreateEvent = () => {
           Create Event
         </h3>
       </section>
+
       <div className="wrapper my-8">
         <EventForm userId={userId} type="Create" />
       </div>

@@ -40,5 +40,3 @@ const MobileNav = () => {
 };
 
 export default MobileNav;
-
-//new

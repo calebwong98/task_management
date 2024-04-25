@@ -40,5 +40,3 @@ export default async function Home() {
     </>
   );
 }
-
-//new

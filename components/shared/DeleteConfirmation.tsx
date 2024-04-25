@@ -57,5 +57,3 @@ export const DeleteConfirmation = ({ eventId }: { eventId: string }) => {
     </AlertDialog>
   );
 };
-
-//new
