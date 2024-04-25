@@ -1,25 +1,32 @@
-import { Document, Schema, model, models } from "mongoose";
+import { Document, Schema, model } from "mongoose";
 
-export interface IEvent extends Document {
-  startDateTime(startDateTime: any): unknown;
-  price: any;
-  isFree: any;
-  _id: string;
-  title: string;
-  description?: string;
-  imageUrl: string;
-  category: { _id: string; name: string };
-  organizer: { _id: string; firstName: string; lastName: string };
-}
-
-const EventSchema = new Schema({
+// Define the schema for the Event document
+const eventSchema = new Schema({
   title: { type: String, required: true },
-  description: { type: String },
+  description: { type: String, required: true },
+  location: { type: String, required: true },
   imageUrl: { type: String, required: true },
-  category: { type: Schema.Types.ObjectId, ref: "Category" },
-  organizer: { type: Schema.Types.ObjectId, ref: "User" },
+  startDateTime: { type: Date, required: true },
+  endDateTime: { type: Date, required: true },
+  categoryId: { type: String, required: true },
+  price: { type: String, required: true },
+  isFree: { type: Boolean, required: true },
+  url: { type: String, required: true },
 });
 
-const Event = models.Event || model("Event", EventSchema);
+// Define the interface for the Event document
+export interface IEvent extends Document {
+  title: string;
+  description: string;
+  location: string;
+  imageUrl: string;
+  startDateTime: Date;
+  endDateTime: Date;
+  categoryId: string;
+  price: string;
+  isFree: boolean;
+  url: string;
+}
 
-export default Event;
+// Create and export the Event model
+export const EventModel = model<IEvent>("Event", eventSchema);
