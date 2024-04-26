@@ -1,4 +1,4 @@
-import { Document, Schema, model } from "mongoose";
+import { Document, Schema, model, Model } from "mongoose";
 
 // Define the schema for the Event document
 const eventSchema = new Schema({
@@ -28,5 +28,17 @@ export interface IEvent extends Document {
   url: string;
 }
 
-// Create and export the Event model
-export const EventModel = model<IEvent>("Event", eventSchema);
+// Create a singleton class to manage the Event model
+class EventModelSingleton {
+  private static instance: Model<IEvent> | null = null;
+
+  static getInstance(): Model<IEvent> {
+    if (!EventModelSingleton.instance) {
+      EventModelSingleton.instance = model<IEvent>("Event", eventSchema);
+    }
+    return EventModelSingleton.instance;
+  }
+}
+
+// Export the Event model using the singleton instance
+export const EventModel = EventModelSingleton.getInstance();
