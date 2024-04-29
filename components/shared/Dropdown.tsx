@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import {
   Select,
   SelectContent,
@@ -6,7 +7,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ICategory } from "@/lib/database/models/category.model";
-import { startTransition, useEffect, useState } from "react";
+import { startTransition } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -33,18 +34,27 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
   const [categories, setCategories] = useState<ICategory[]>([]);
   const [newCategory, setNewCategory] = useState("");
 
-  const handleAddCategory = () => {
-    createCategory({
-      categoryName: newCategory.trim(),
-    }).then((category) => {
-      setCategories((prevState) => [...prevState, category]);
-    });
+  const handleAddCategory = async () => {
+    try {
+      const newCategoryData = await createCategory({
+        categoryName: newCategory.trim(),
+      });
+
+      if (newCategoryData) {
+        console.log("New category data:", newCategoryData); // Log the newly added category data
+        setCategories((prevState) => [...prevState, newCategoryData]);
+        setNewCategory(""); // Reset the input field after successfully adding the category
+      } else {
+        console.error("Failed to create new category");
+      }
+    } catch (error) {
+      console.error("Error creating new category:", error);
+    }
   };
 
   useEffect(() => {
     const getCategories = async () => {
       const categoryList = await getAllCategories();
-
       categoryList && setCategories(categoryList as ICategory[]);
     };
 
@@ -60,11 +70,11 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
         {categories.length > 0 &&
           categories.map((category) => (
             <SelectItem
-              key={category._id}
-              value={category._id}
+              key={category?._id}
+              value={category?._id} // Using optional chaining to prevent errors if category is undefined
               className="select-item p-regular-14"
             >
-              {category.name}
+              {category?.name}
             </SelectItem>
           ))}
 
@@ -80,6 +90,7 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
                   type="text"
                   placeholder="Staff name"
                   className="input-field mt-3"
+                  value={newCategory}
                   onChange={(e) => setNewCategory(e.target.value)}
                 />
               </AlertDialogDescription>
