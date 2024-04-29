@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { Document, Schema, model, models } from "mongoose";
-=======
-import { Document, Schema, model, Model } from "mongoose";
->>>>>>> c6055e42b996b3514444ea71f9d17c15d0bb1350
 
 export interface IEvent extends Document {
   _id: string;
@@ -20,7 +16,6 @@ export interface IEvent extends Document {
   organizer: { _id: string; firstName: string; lastName: string };
 }
 
-<<<<<<< HEAD
 const EventSchema = new Schema({
   title: { type: String, required: true },
   description: { type: String },
@@ -39,19 +34,3 @@ const EventSchema = new Schema({
 const Event = models.Event || model("Event", EventSchema);
 
 export default Event;
-=======
-// Create a singleton class to manage the Event model
-class EventModelSingleton {
-  private static instance: Model<IEvent> | null = null;
-
-  static getInstance(): Model<IEvent> {
-    if (!EventModelSingleton.instance) {
-      EventModelSingleton.instance = model<IEvent>("Event", eventSchema);
-    }
-    return EventModelSingleton.instance;
-  }
-}
-
-// Export the Event model using the singleton instance
-export const EventModel = EventModelSingleton.getInstance();
->>>>>>> c6055e42b996b3514444ea71f9d17c15d0bb1350

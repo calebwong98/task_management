@@ -21,7 +21,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { FileUploader } from "./FileUploader";
 import { useState } from "react";
 import { useUploadThing } from "@/lib/uploadthing";
-import router, { useRouter } from "next/router"; // Import useRouter from next/router
+import router, { useRouter } from "next/router";
 import { IEvent } from "@/lib/database/models/event.model";
 import { createEvent, updateEvent } from "@/lib/actions/event.action";
 
@@ -174,5 +174,3 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
 };
 
 export default EventForm;
-
-//NEW
