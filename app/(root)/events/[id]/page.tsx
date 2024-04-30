@@ -1,9 +1,9 @@
-import { getEventbyId } from "@/lib/actions/event.actions";
+import { getEventById } from "@/lib/actions/event.actions";
 import { SearchParamProps } from "@/types";
 import Image from "next/image";
 
 const EventDetails = async ({ params: { id } }: SearchParamProps) => {
-  const event = await getEventbyId(id);
+  const event = await getEventById(id);
 
   return (
     <section className="flex justify-center bg-primary-50 bg-dotted-pattern bg-contain">
