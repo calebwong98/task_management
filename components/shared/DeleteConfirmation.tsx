@@ -58,4 +58,4 @@ export const DeleteConfirmation = ({ eventId }: { eventId: string }) => {
   );
 };
 
-//new
+//hi
