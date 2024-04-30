@@ -5,14 +5,14 @@ import Collection from "@/components/shared/Collection";
 import { getAllEvents } from "@/lib/actions/event.action";
 
 export default async function Home() {
-  const events = await getAllEvents({
-    query: "",
-    category: "",
-    page: 1,
-    limit: 6,
-  });
+  // const events = await getAllEvents({
+  //   query: "",
+  //   category: "",
+  //   page: 1,
+  //   limit: 6,
+  // });
 
-  console.log(events);
+  // console.log(events);
 
   return (
     <>
@@ -27,7 +27,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <Collection
+        {/* <Collection
           data={events?.data}
           emptyTitle="No Events Found"
           emptyStateSubtext="Come back later"
@@ -35,7 +35,7 @@ export default async function Home() {
           limit={6}
           page={1}
           totalPages={2}
-        />
+        /> */}
       </section>
     </>
   );
