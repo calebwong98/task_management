@@ -46,3 +46,5 @@ const EventDetails = async ({ params: { id } }: SearchParamProps) => {
 };
 
 export default EventDetails;
+
+//new

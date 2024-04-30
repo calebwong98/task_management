@@ -18,3 +18,5 @@ export const eventFormSchema = z.object({
   isFree: z.boolean(),
   url: z.string().url(),
 });
+
+//new

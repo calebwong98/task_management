@@ -35,3 +35,5 @@ const UpdateEvent = async ({ params: { id } }: UpdateEventProps) => {
 };
 
 export default UpdateEvent;
+
+//new
