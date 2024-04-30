@@ -1,4 +1,4 @@
-import { getEventbyId } from "@/lib/actions/event.action";
+import { getEventbyId } from "@/lib/actions/event.actions";
 import { SearchParamProps } from "@/types";
 import Image from "next/image";
 

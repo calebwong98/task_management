@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import Collection from "@/components/shared/Collection";
-import { getAllEvents } from "@/lib/actions/event.action";
+import { getAllEvents } from "@/lib/actions/event.actions";
 
 export default async function Home() {
   // const events = await getAllEvents({

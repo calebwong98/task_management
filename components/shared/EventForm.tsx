@@ -23,7 +23,7 @@ import { useState } from "react";
 import { useUploadThing } from "@/lib/uploadthing";
 import router, { useRouter } from "next/router";
 import { IEvent } from "@/lib/database/models/event.model";
-import { createEvent, updateEvent } from "@/lib/actions/event.action";
+import { createEvent, updateEvent } from "@/lib/actions/event.actions";
 
 type EventFormProps = {
   userId: string;
